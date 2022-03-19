@@ -1,2 +1,3 @@
 # gsap-pages
-Created with CodeSandbox
+
+Gsap pages playground

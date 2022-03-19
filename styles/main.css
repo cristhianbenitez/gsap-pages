@@ -55,6 +55,14 @@ section {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	min-height: 100vh;
+	grid-auto-flow: dense;
+}
+
+section.reversed div.split:first-child {
+	grid-column: 2;
+}
+section.reversed div.split:last-child {
+	grid-column: 1;
 }
 
 section:nth-child(2n) {
@@ -65,6 +73,7 @@ section div.split {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
 }
 
 section div.split:first-child {
@@ -83,10 +92,12 @@ section div.slides img {
 	left: 0;
 	height: 750px;
 	width: 500px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
 }
 
 section div.info {
 	max-width: 480px;
+	padding: 0 2em;
 }
 
 section h2 {
@@ -94,5 +105,45 @@ section h2 {
 }
 
 section p {
-	margin: 32px 0 0 0;
+	margin: 32px 0 25px 0;
+}
+section a {
+	background-color: #ffffff;
+	color: #111111;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 0.5em 1em;
+	border-radius: 50px;
+	display: inline-flex;
+	align-items: center;
+}
+
+section a img {
+	margin: 0 0 0 8px;
+	width: 10px;
+	height: 16px;
+	object-fit: cover;
+	object-position: center right;
+	transition: width 0.25s;
+}
+section a:hover img {
+	width: 25px;
+}
+
+@media (max-width: 1080px) {
+	section {
+		display: block;
+	}
+
+	section div.split {
+		padding: 5em 0;
+	}
+}
+
+@media (max-width: 700px) {
+	section div.slides,
+	section div.slides img {
+		width: 80vw;
+		height: 120vw;
+	}
 }
