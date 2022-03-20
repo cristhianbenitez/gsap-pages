@@ -1,3 +1,5 @@
+import { gsap } from 'gsap';
+
 const mqDark = window.matchMedia('(prefers-color-scheme: dark)');
 
 const darkModeToggle = document.querySelector('a.dark-mode-toggle');
