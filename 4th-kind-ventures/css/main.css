@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 :root {
   --clr-main: #ffffff;
   --clr-text: #000000;
@@ -18,23 +24,39 @@ body {
   line-height: 40px;
 
   background-color: var(--clr-main);
-  background-image: url('/assets/grid.svg');
-  background-position: center center;
-
   color: var(--clr-text);
 }
 
+section {
+  background-image: url('/assets/grid.svg');
+  background-position: center center;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(0, 0);
+  transition: transform 0.5s;
+}
+
+body.nav-open section {
+  transform: translate(-100px, 0);
+}
+
 h1 {
+  font-size: 1em;
   position: fixed;
   top: 32px;
   left: 32px;
 }
 
+h1 rect {
+  fill: var(--clr-highlight);
+}
+
 a {
   color: var(--clr-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-decoration: none;
 }
 
@@ -46,10 +68,112 @@ a.dark-mode-toggle {
   position: fixed;
   bottom: 32px;
   left: 32px;
+  z-index: 1;
+}
+
+a.dark-mode-toggle circle {
+  fill: currentColor;
+}
+a.dark-mode-toggle rect {
+  stroke: currentColor;
+}
+
+a.dark-mode-toggle:hover g.toggle circle {
+  transform: scale(1.75);
+}
+
+a.dark-mode-toggle g.toggle circle {
+  transition: transform 0.5s;
 }
 
 a.menu-toggle {
   position: fixed;
   top: 32px;
   right: 32px;
+  z-index: 1;
+}
+a.menu-toggle rect {
+  fill: currentColor;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  background-color: var(--clr-main);
+  padding: 2em;
+  transform: translate(100%, 0);
+  transition: transform 0.5s 0s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+nav.fake-mid {
+  background-color: var(--clr-highlight);
+  transition-delay: 0.1s;
+}
+
+nav.fake-back {
+  background-color: var(--clr-text);
+  transition-delay: 0.2s;
+}
+
+body.nav-open nav {
+  transform: translate(0, 0);
+  transition-delay: 0.2s;
+}
+
+body.nav-open nav.fake-mid {
+  transition-delay: 0.1s;
+}
+
+body.nav-open nav.fake-back {
+  transition-delay: 0s;
+}
+
+nav div.internal {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 64px;
+  flex: 1;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+div.wipe-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--clr-highlight);
+  z-index: 3;
+  transition: background-color 0.0001s 2s;
+}
+
+svg.spiral {
+  border: 2px solid var(--clr-highlight);
+}
+svg.spiral rect {
+  fill: var(--clr-highlight);
+  fill-opacity: 0;
+  stroke: var(--clr-highlight);
+}
+
+svg.spiral rect:hover {
+  fill-opacity: 0.5;
 }
