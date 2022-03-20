@@ -1,0 +1,41 @@
+Demo:
+https://4th-kind.superhi.com/
+
+Figma link:
+https://www.figma.com/file/WLDUJVLs3Q1qlSiEDLZWsk/4th-Kind
+
+Inspo:
+http://www.3kvc.com/
+
+Colors – light mode:
+Background: #ffffff
+Text color: #000000
+Highlight: #2727e6
+
+Colors – dark mode:
+Background: #000000
+Text color: #ffffff
+Highlight: #ff4141
+
+Typography:
+Inter at 500 weight
+https://fonts.google.com/specimen/Inter
+
+Code:
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+Content:
+
+4th Kind Ventures
+
+Dark mode
+Menu
+Close
+
+About
+Blog
+Investments
+
+Instagram
+Crunchbase
+Twitter
