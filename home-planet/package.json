@@ -5,7 +5,9 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "build-deploy": "npm run build && cd dist && surge . --domain homeplanet.surge.sh",
+    "deploy": "cd dist && surge . --domain homeplanet.surge.sh"
   },
   "keywords": [],
   "author": "",
